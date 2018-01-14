@@ -2,18 +2,14 @@
 class School
   attr_accessor :name, :grade, :roster
 
-  def initialize
+  def initialize(school)
     @school = school
     @roster = {}
   end
 
   def add_student(name,grade)
-    if roster[grade] == nil
       roster[grade]=[]
       roster[grade] << name
-    else
-      roster[grade] << name
-    end
   end
 
   def grade(grade)
@@ -21,8 +17,8 @@ class School
 end
 
   def sort
-    roster.each do |keys, values|
-      values.sort!
+    roster.each do |k, v|
+      v.sort!
   end
 end
 
